@@ -54,6 +54,10 @@ const generateAccessToken = (req, res) => {
 
 app.get("/access_token", nocache, generateAccessToken);
 
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
+});
+
 app.listen(PORT, () => {
   console.log(`Listening in port: `, PORT);
 });
